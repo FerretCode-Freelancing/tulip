@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package tulip;
+
+service Tulip {
+  rpc Publish(PublishRequest) returns (PublishResponse) {}
+}
+
+message PublishRequest {
+  string Topic = 1;
+  string Payload = 2;
+}
+
+message PublishResponse {
+  string Message = 1;
+  string Error = 2;
+}
